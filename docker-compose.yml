@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  db4o:
+    image: 'lecoz/db4o:latest'
+    environment: # variaveis de ambiente
+      DBA: db4o
+      password: db4o
+
+    ports:
+      - '4448:4448'
+    volumes:
+      - './code:/code'
+      - 'db4odata'
+
+volumes:
+  db4odata: {}
